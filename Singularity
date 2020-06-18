@@ -20,7 +20,9 @@ From: xsede/centos-nix-openmpi:latest
 
 %help
     This is a testing container for OpenMPI in a docker image
-    CentOS with Nix converted to a singularity container.
+    based on CentOS with Nix converted to a singularity container.
+    Original dockerfile from:
+    https://github.com/XSEDE/docker-centos-nix-openmpi
 
 
 
