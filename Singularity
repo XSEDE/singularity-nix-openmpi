@@ -13,8 +13,6 @@ From: xsede/centos-nix-openmpi:latest
     else
         echo "Container base is not CentOS :-("
     fi
-    
-    nix-store --verify --check-contents
 
 %labels
     Author pete@XCI
