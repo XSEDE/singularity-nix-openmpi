@@ -1,10 +1,10 @@
 Bootstrap: docker
-From: xsede/centos-nix-base:latest
+From: xsede/centos-nix-openmpi:latest
 
 
 %runscript
-    exec echo "Hello world!"
-    nix-store --verify --check-contents
+    #nix-store --verify --check-contents
+    nix-shell /root/dev.nix
 
 %test
     grep -q NAME=\"CentOS\ Linux\" /etc/os-release
@@ -13,14 +13,16 @@ From: xsede/centos-nix-base:latest
     else
         echo "Container base is not CentOS :-("
     fi
+    
+    nix-store --verify --check-contents
 
 %labels
     Author pete@XCI
     Version v0.0.1
 
 %help
-    This is a testing container for converting our base CentOS Nix
-    docker image into a singularity container.
+    This is a testing container for OpenMPI in a docker image
+    CentOS with Nix converted to a singularity container.
 
 
 
